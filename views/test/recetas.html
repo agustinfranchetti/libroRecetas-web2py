@@ -1,0 +1,14 @@
+{{extend 'layout.html'}}
+
+<h1>Lista de recetas</h1>
+{{=form}}
+<table>
+    {{for receta in records:}}
+<tr>
+    <td>{{=A(receta.nombre,_href=URL('mostrar?id=%s'%receta.id))}}</td>
+    <td>{{=receta.fecha}}</td>
+</tr>
+{{pass}}
+</table>
+
+{{=A('Crear receta nueva',_href=URL('new_receta'))}}
